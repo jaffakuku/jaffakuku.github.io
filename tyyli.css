@@ -1,0 +1,400 @@
+/* styles.css — SAVIKALLIO:n tyylit */
+
+/* Perusasetukset */
+:root {
+    --primary-color: #6b4f3f;
+    /* esim. saven ruskea sävy */
+    --secondary-color: #c9b8a7;
+    /* vaalea neutraali */
+    --accent-color: #8a6b56;
+    /* korostusväri */
+    --text-color: #333333;
+    --bg-color: #faf5f0;
+    --link-color: var(--primary-color);
+    --link-hover-color: var(--accent-color);
+    --border-color: #ddd;
+    --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-serif: Georgia, "Times New Roman", serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.5;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+/* Header / navigaatio */
+
+.site-header {
+    background-color: #fff;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand .logo {
+    height: 50px;
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.main-nav a {
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    background-color: var(--secondary-color);
+}
+
+/* Responsive navigaatio pienemmille näytöille */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .main-nav a {
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
+
+/* Pääsisältö */
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Hero / esittelytekstit tuotteille */
+
+.products-hero {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.products-hero h1 {
+    font-size: 2.25rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.products-hero p {
+    font-size: 1.125rem;
+    color: #555;
+}
+
+/* Tuote- / korttilistaus */
+
+.products-list .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card h3 {
+    margin: 1rem;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.card p {
+    margin: 0 1rem 1rem;
+    flex-grow: 1;
+    color: #555;
+}
+
+/* Footer */
+
+.site-footer {
+    background-color: #fff;
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.site-footer p {
+    color: #777;
+}
+
+/* Muutinimikkeet / apuluokat */
+
+.text-center {
+    text-align: center;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.button:hover {
+    background-color: var(--accent-color);
+}
+
+.centered-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    /* Korkeus lähes koko ruutu */
+    background-color: var(--bg-color);
+    /* taustaväri */
+    padding: 2rem;
+}
+
+.centered-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.image-side {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.image-side img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.text-side {
+    flex: 1 1 50%;
+    text-align: center;
+}
+
+.text-side h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.text-side p {
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Header layout */
+.site-header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 0.5rem;
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Perusvalikko */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 0.5rem 0.75rem;
+}
+
+.main-nav a:hover {
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+}
+
+/* Piilotetaan checkbox ja valikkopainike oletuksena */
+.nav-checkbox {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Responsiivinen valikko mobiilissa */
+@media (max-width: 768px) {
+    .nav-toggle-label {
+        display: block;
+        color: var(--primary-color);
+    }
+
+    .main-nav {
+        display: none;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 10;
+        border-top: 1px solid #eee;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .main-nav li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 1rem;
+    }
+
+    /* Näytetään valikko, kun checkbox on valittuna */
+    .nav-checkbox:checked~.main-nav {
+        display: block;
+    }
+}

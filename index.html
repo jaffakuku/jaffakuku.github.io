@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="author" content="Kaisa Kallio">
+  <title>Tuotteet — SAVIKALLIO</title>
+  <link rel="stylesheet" href="tyyli.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="Kuvia/Logo.jpg" alt="SAVIKALLIO logo" class="logo" />
+        <span class="brand-text">SAVIKALLIO</span>
+      </a>
+
+      <!-- Piilotettu valintaruutu -->
+      <input type="checkbox" id="nav-toggle" class="nav-checkbox" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Avaa valikko">
+        ☰
+      </label>
+
+      <button id="navToggle4" class="nav-toggle" aria-expanded="false" aria-controls="mainNav4">Valikko</button>
+
+      <nav id="mainNav4" class="main-nav" aria-label="Päänavigaatio">
+        <ul>
+          <li><a href="index.html">Etusivu</a></li>
+          <li><a href="kurssit.html">Kurssit</a></li>
+          <li><a href="tuotteet.html" aria-current="page">Tuotteet</a></li>
+          <li><a href="yhteystiedot.html">Yhteystiedot</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </header>
+
+  <!--hero-section container-->
+
+  <section class="image-text container">
+    <div class="text-side">
+      <h1>Tervetuloa SAVIKALLIOON</h1>
+
+      <p>
+        Me uskomme, että keramiikka on enemmän kuin esine – se on tunne, jälki ja muisto. Tule kokemaan se itse.
+      </p>
+    </div>
+  </section>
+
+  <section class="image-text container">
+    <div class="image-side">
+      <img src="Kuvia/Tilat.jpg" alt="Savimateriaali tai keramiikkatyö" />
+    </div>
+    <div class="text-side">
+      <h2>Luonnollista kauneutta savesta</h2>
+
+      <p> SAVIKALLIO on saven, käsityön ja luovuuden koti. Tarjoamme huolella valittuja
+        <strong>keramiikkatuotteita</strong>, <strong>savenmuotoilutyökaluja</strong> ja <strong>kursseja</strong>,
+        jotka
+        inspiroivat niin aloittelijoita kuin kokeneita tekijöitä.
+      </p>
+
+      <p>
+        Meille savi ei ole vain materiaali – se on tapa pysähtyä, luoda ja kokea käsillä tekemisen iloa. Tuotteemme ja
+        kurssimme ovat syntyneet rakkaudesta saven luonnolliseen tuntuun ja keramiikan hiljaiseen kauneuteen.
+      </p>
+
+      <p>
+        Tutustu valikoimaamme, varaa paikka kurssilta tai tule piipahtamaan – olet lämpimästi tervetullut osaksi
+        SAVIKALLIO-yhteisöä.
+      </p>
+
+      <a href="tuotteet.html" class="button">Tutustu tuotteisiin</a>
+    </div>
+  </section>
+
+  <section class="centered-section">
+    <div class="centered-content">
+      <div class="image-side">
+        <img src="Kuvia/Kukkia.jpg" alt="Savikukkia" />
+      </div>
+      <div class="text-side">
+        <h2>Luonnollista kauneutta savesta</h2>
+        <p>
+          SAVIKALLIO tarjoaa käsintehtyä estetiikkaa ja laadukkaita tarvikkeita saven maailmaan. Anna luovuutesi virrata
+          – me tarjoamme sinulle parhaat välineet siihen.
+        </p>
+        <a href="kurssit.html" class="button">Tutustu kursseihin</a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year4"></span> SAVIKALLIO</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const yearEl = document.getElementById('year4');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      const navToggle = document.getElementById('navToggle4');
+      const mainNav = document.getElementById('mainNav4');
+
+      if (navToggle && mainNav) {
+        navToggle.addEventListener('click', () => {
+          const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+          navToggle.setAttribute('aria-expanded', !expanded);
+          mainNav.classList.toggle('open');
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
