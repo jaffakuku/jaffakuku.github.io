@@ -1,6 +1,3 @@
-/* styles.css — SAVIKALLIO:n tyylit */
-
-/* Perusasetukset */
 :root {
     --primary-color: #6b4f3f;
     /* esim. saven ruskea sävy */
@@ -60,6 +57,9 @@ a:focus {
 .brand {
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 1000;
+    pointer-events: auto;
 }
 
 .brand .logo {
@@ -482,5 +482,6 @@ a:focus {
 
 
 }
+
 
 
