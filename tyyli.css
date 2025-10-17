@@ -397,4 +397,75 @@ a:focus {
     .nav-checkbox:checked~.main-nav {
         display: block;
     }
+    /* Perustyylit */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 50px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Piilotetaan checkbox ja näytetään toggle-label vain mobiilissa */
+.nav-checkbox {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Responsiivisuus */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+    z-index: 1000;
+  }
+
+  .nav-toggle-label {
+    display: block;
+  }
+
+  .nav-checkbox:checked + .nav-toggle-label + .main-nav {
+    display: flex;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+
 }
