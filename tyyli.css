@@ -404,10 +404,20 @@ a:focus {
   padding: 1rem 0;
 }
 
+.site-header {
+  position: relative; /* Sijoitetaan valikko headerin sisään */
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+  z-index: 100;
+}
+
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
 }
 
 .logo {
@@ -469,3 +479,4 @@ a:focus {
 
 
 }
+
