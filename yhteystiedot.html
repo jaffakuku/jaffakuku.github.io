@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="author" content="Kaisa Kallio">
-    <title>Tuotteet — SAVIKALLIO</title>
+    <title>SAVIKALLIO</title>
     <link rel="stylesheet" href="tyyli.css" />
 </head>
 
@@ -17,7 +17,13 @@
                 <span class="brand-text">SAVIKALLIO</span>
             </a>
 
-            <button id="navToggle4" class="nav-toggle" aria-expanded="false" aria-controls="mainNav4">Valikko</button>
+            <!-- Piilotettu valintaruutu -->
+            <input type="checkbox" id="nav-toggle" class="nav-checkbox" />
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="Avaa valikko">
+                ☰
+            </label>
+
+            <!--<button id="navToggle4" class="nav-toggle" aria-expanded="false" aria-controls="mainNav4">Valikko</button>-->
 
             <nav id="mainNav4" class="main-nav" aria-label="Päänavigaatio">
                 <ul>
