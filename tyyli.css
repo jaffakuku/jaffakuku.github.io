@@ -354,17 +354,20 @@ a:focus {
     display: none;
 }
 
-.nav-toggle-label {
+/*.nav-toggle-label {
     display: none;
     font-size: 2rem;
     cursor: pointer;
     user-select: none;
-}
+}*/ 
 
 /* Responsiivinen valikko mobiilissa */
 @media (max-width: 768px) {
     .nav-toggle-label {
         display: block;
+        position: relative;
+        cursor: pointer;
+        z-index: 1000;
         color: var(--primary-color);
     }
 
@@ -479,4 +482,5 @@ a:focus {
 
 
 }
+
 
